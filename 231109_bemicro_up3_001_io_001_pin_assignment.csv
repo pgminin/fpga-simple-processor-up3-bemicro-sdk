@@ -1,0 +1,35 @@
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+
+# Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# File: C:\Dati\Progetti\altera\231109_bemicro_up3_001_io_001\231109_bemicro_up3_001_io_001_pin_assignment.csv
+# Generated on: Fri Nov 10 11:54:38 2023
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+clk_fpga_50M,Input,PIN_E1,1,B1_N0,PIN_E1,2.5 V,,,,,
+led8[7],Output,PIN_B1,1,B1_N0,PIN_B1,2.5 V,,,,,
+led8[6],Output,PIN_D1,1,B1_N0,PIN_D1,2.5 V,,,,,
+led8[5],Output,PIN_L13,5,B5_N0,PIN_L13,2.5 V,,,,,
+led8[4],Output,PIN_R10,4,B4_N0,PIN_R10,2.5 V,,,,,
+led8[3],Output,PIN_P15,5,B5_N0,PIN_P15,2.5 V,,,,,
+led8[2],Output,PIN_P9,4,B4_N0,PIN_P9,2.5 V,,,,,
+led8[1],Output,PIN_K5,2,B2_N0,PIN_K5,2.5 V,,,,,
+led8[0],Output,PIN_N15,5,B5_N0,PIN_N15,2.5 V,,,,,
+reset_key,Input,PIN_R7,3,B3_N0,PIN_R7,2.5 V,,,,,
+user_key1,Input,PIN_C2,1,B1_N0,PIN_C2,2.5 V,,,,,
+user_sw0,Input,PIN_T14,4,B4_N0,PIN_T14,2.5 V,,,,,
+user_sw1,Input,PIN_R13,4,B4_N0,PIN_R13,2.5 V,,,,,

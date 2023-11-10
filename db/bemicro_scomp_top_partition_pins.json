@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led8[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led8[7]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_key",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw1",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw0",
+					"strict" : false
+				},
+				{
+					"name" : "clk_fpga_50M",
+					"strict" : false
+				},
+				{
+					"name" : "user_key1",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

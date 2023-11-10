@@ -1,0 +1,14 @@
+
+State Machine - |bemicro_scomp_top|scomp:cpu1|state
+Name state.execute_out state.execute_jump_n state.execute_jump state.execute_load state.execute_store3 state.execute_store2 state.execute_store state.execute_add state.decode state.fetch state.reset_pc 
+state.reset_pc 0 0 0 0 0 0 0 0 0 0 0 
+state.fetch 0 0 0 0 0 0 0 0 0 1 1 
+state.decode 0 0 0 0 0 0 0 0 1 0 1 
+state.execute_add 0 0 0 0 0 0 0 1 0 0 1 
+state.execute_store 0 0 0 0 0 0 1 0 0 0 1 
+state.execute_store2 0 0 0 0 0 1 0 0 0 0 1 
+state.execute_store3 0 0 0 0 1 0 0 0 0 0 1 
+state.execute_load 0 0 0 1 0 0 0 0 0 0 1 
+state.execute_jump 0 0 1 0 0 0 0 0 0 0 1 
+state.execute_jump_n 0 1 0 0 0 0 0 0 0 0 1 
+state.execute_out 1 0 0 0 0 0 0 0 0 0 1 

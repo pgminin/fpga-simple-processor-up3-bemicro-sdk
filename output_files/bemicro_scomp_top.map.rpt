@@ -1,0 +1,565 @@
+Analysis & Synthesis report for bemicro_scomp_top
+Fri Nov 10 15:35:55 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |bemicro_scomp_top|scomp:cpu1|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for scomp:cpu1|altsyncram:altsyncram_component|altsyncram_mct:auto_generated
+ 14. Parameter Settings for User Entity Instance: Clock_divider_50Mto1H_10H_100H:comb_10
+ 15. Parameter Settings for User Entity Instance: scomp:cpu1
+ 16. Parameter Settings for User Entity Instance: scomp:cpu1|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "scomp:cpu1"
+ 19. Port Connectivity Checks: "Clock_divider_50Mto1H_10H_100H:comb_10"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Nov 10 15:35:55 2023       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; bemicro_scomp_top                           ;
+; Top-level Entity Name              ; bemicro_scomp_top                           ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 212                                         ;
+;     Total combinational functions  ; 188                                         ;
+;     Dedicated logic registers      ; 112                                         ;
+; Total registers                    ; 112                                         ;
+; Total pins                         ; 13                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 4,096                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C7       ;                    ;
+; Top-level entity name                                            ; bemicro_scomp_top  ; bemicro_scomp_top  ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++--------------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                               ; Library ;
++--------------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------------+---------+
+; hdl/fibonacci.mif                    ; yes             ; User Memory Initialization File  ; C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/fibonacci.mif                    ;         ;
+; hdl/scomp.v                          ; yes             ; User Verilog HDL File            ; C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v                          ;         ;
+; hdl/debounce_f4s.v                   ; yes             ; User Verilog HDL File            ; C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/debounce_f4s.v                   ;         ;
+; hdl/Clock_divider_50Mto1H_10H_100H.v ; yes             ; User Verilog HDL File            ; C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/Clock_divider_50Mto1H_10H_100H.v ;         ;
+; hdl/bemicro_scomp_top.v              ; yes             ; User Verilog HDL File            ; C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v              ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
+; aglobal201.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                      ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
+; altrom.inc                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                          ;         ;
+; altram.inc                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                          ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                     ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
+; db/altsyncram_mct.tdf                ; yes             ; Auto-Generated Megafunction      ; C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/db/altsyncram_mct.tdf                ;         ;
++--------------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 212     ;
+;                                             ;         ;
+; Total combinational functions               ; 188     ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 88      ;
+;     -- 3 input functions                    ; 32      ;
+;     -- <=2 input functions                  ; 68      ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 112     ;
+;     -- arithmetic mode                      ; 76      ;
+;                                             ;         ;
+; Total registers                             ; 112     ;
+;     -- Dedicated logic registers            ; 112     ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 13      ;
+; Total memory bits                           ; 4096    ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; clk_cpu ;
+; Maximum fan-out                             ; 66      ;
+; Total fan-out                               ; 1107    ;
+; Average fan-out                             ; 3.24    ;
++---------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name                    ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------------------------+--------------+
+; |bemicro_scomp_top                          ; 188 (2)             ; 112 (0)                   ; 4096        ; 0            ; 0       ; 0         ; 13   ; 0            ; |bemicro_scomp_top                                                                          ; bemicro_scomp_top              ; work         ;
+;    |Clock_divider_50Mto1H_10H_100H:comb_10| ; 92 (92)             ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|Clock_divider_50Mto1H_10H_100H:comb_10                                   ; Clock_divider_50Mto1H_10H_100H ; work         ;
+;    |debounce_f4s:db_user1|                  ; 1 (1)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|debounce_f4s:db_user1                                                    ; debounce_f4s                   ; work         ;
+;       |my_dff:d0|                           ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|debounce_f4s:db_user1|my_dff:d0                                          ; my_dff                         ; work         ;
+;       |my_dff:d1|                           ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|debounce_f4s:db_user1|my_dff:d1                                          ; my_dff                         ; work         ;
+;       |my_dff:d2|                           ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|debounce_f4s:db_user1|my_dff:d2                                          ; my_dff                         ; work         ;
+;       |my_dff:d3|                           ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|debounce_f4s:db_user1|my_dff:d3                                          ; my_dff                         ; work         ;
+;    |scomp:cpu1|                             ; 93 (93)             ; 50 (50)                   ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|scomp:cpu1                                                               ; scomp                          ; work         ;
+;       |altsyncram:altsyncram_component|     ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|scomp:cpu1|altsyncram:altsyncram_component                               ; altsyncram                     ; work         ;
+;          |altsyncram_mct:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bemicro_scomp_top|scomp:cpu1|altsyncram:altsyncram_component|altsyncram_mct:auto_generated ; altsyncram_mct                 ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+--------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
++-------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------------+
+; Name                                                                                ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF           ;
++-------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------------+
+; scomp:cpu1|altsyncram:altsyncram_component|altsyncram_mct:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 16           ; --           ; --           ; 4096 ; fibonacci.mif ;
++-------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bemicro_scomp_top|scomp:cpu1|state                                                                                                                                                                                             ;
++----------------------+-------------------+----------------------+--------------------+--------------------+----------------------+----------------------+---------------------+-------------------+--------------+-------------+----------------+
+; Name                 ; state.execute_out ; state.execute_jump_n ; state.execute_jump ; state.execute_load ; state.execute_store3 ; state.execute_store2 ; state.execute_store ; state.execute_add ; state.decode ; state.fetch ; state.reset_pc ;
++----------------------+-------------------+----------------------+--------------------+--------------------+----------------------+----------------------+---------------------+-------------------+--------------+-------------+----------------+
+; state.reset_pc       ; 0                 ; 0                    ; 0                  ; 0                  ; 0                    ; 0                    ; 0                   ; 0                 ; 0            ; 0           ; 0              ;
+; state.fetch          ; 0                 ; 0                    ; 0                  ; 0                  ; 0                    ; 0                    ; 0                   ; 0                 ; 0            ; 1           ; 1              ;
+; state.decode         ; 0                 ; 0                    ; 0                  ; 0                  ; 0                    ; 0                    ; 0                   ; 0                 ; 1            ; 0           ; 1              ;
+; state.execute_add    ; 0                 ; 0                    ; 0                  ; 0                  ; 0                    ; 0                    ; 0                   ; 1                 ; 0            ; 0           ; 1              ;
+; state.execute_store  ; 0                 ; 0                    ; 0                  ; 0                  ; 0                    ; 0                    ; 1                   ; 0                 ; 0            ; 0           ; 1              ;
+; state.execute_store2 ; 0                 ; 0                    ; 0                  ; 0                  ; 0                    ; 1                    ; 0                   ; 0                 ; 0            ; 0           ; 1              ;
+; state.execute_store3 ; 0                 ; 0                    ; 0                  ; 0                  ; 1                    ; 0                    ; 0                   ; 0                 ; 0            ; 0           ; 1              ;
+; state.execute_load   ; 0                 ; 0                    ; 0                  ; 1                  ; 0                    ; 0                    ; 0                   ; 0                 ; 0            ; 0           ; 1              ;
+; state.execute_jump   ; 0                 ; 0                    ; 1                  ; 0                  ; 0                    ; 0                    ; 0                   ; 0                 ; 0            ; 0           ; 1              ;
+; state.execute_jump_n ; 0                 ; 1                    ; 0                  ; 0                  ; 0                    ; 0                    ; 0                   ; 0                 ; 0            ; 0           ; 1              ;
+; state.execute_out    ; 1                 ; 0                    ; 0                  ; 0                  ; 0                    ; 0                    ; 0                   ; 0                 ; 0            ; 0           ; 1              ;
++----------------------+-------------------+----------------------+--------------------+--------------------+----------------------+----------------------+---------------------+-------------------+--------------+-------------+----------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; scomp:cpu1|state.execute_out          ; Lost fanout        ;
+; scomp:cpu1|state~4                    ; Lost fanout        ;
+; scomp:cpu1|state~5                    ; Lost fanout        ;
+; scomp:cpu1|state~6                    ; Lost fanout        ;
+; scomp:cpu1|state~7                    ; Lost fanout        ;
+; Total Number of Removed Registers = 5 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 112   ;
+; Number of registers using Synchronous Clear  ; 56    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |bemicro_scomp_top|Clock_divider_50Mto1H_10H_100H:comb_10|counter100[4] ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |bemicro_scomp_top|Clock_divider_50Mto1H_10H_100H:comb_10|counter10[23] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |bemicro_scomp_top|scomp:cpu1|register_A[6]                             ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |bemicro_scomp_top|scomp:cpu1|program_counter[3]                        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |bemicro_scomp_top|scomp:cpu1|Selector47                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for scomp:cpu1|altsyncram:altsyncram_component|altsyncram_mct:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------+
+; Assignment                      ; Value              ; From ; To                                ;
++---------------------------------+--------------------+------+-----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
++---------------------------------+--------------------+------+-----------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Clock_divider_50Mto1H_10H_100H:comb_10 ;
++----------------+------------------------------+-------------------------------------+
+; Parameter Name ; Value                        ; Type                                ;
++----------------+------------------------------+-------------------------------------+
+; DIVISOR1       ; 0010111110101111000010000000 ; Unsigned Binary                     ;
+; DIVISOR10      ; 0000010011000100101101000000 ; Unsigned Binary                     ;
+; DIVISOR100     ; 0000000001111010000100100000 ; Unsigned Binary                     ;
++----------------+------------------------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scomp:cpu1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; reset_pc       ; 0     ; Signed Integer                 ;
+; fetch          ; 1     ; Signed Integer                 ;
+; decode         ; 2     ; Signed Integer                 ;
+; execute_add    ; 3     ; Signed Integer                 ;
+; execute_store  ; 4     ; Signed Integer                 ;
+; execute_store2 ; 5     ; Signed Integer                 ;
+; execute_store3 ; 6     ; Signed Integer                 ;
+; execute_load   ; 7     ; Signed Integer                 ;
+; execute_jump   ; 8     ; Signed Integer                 ;
+; execute_jump_n ; 9     ; Signed Integer                 ;
+; execute_out    ; 1010  ; Unsigned Binary                ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scomp:cpu1|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                     ;
+; WIDTH_A                            ; 16                   ; Signed Integer              ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer              ;
+; NUMWORDS_A                         ; 1                    ; Untyped                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 1                    ; Untyped                     ;
+; WIDTHAD_B                          ; 1                    ; Untyped                     ;
+; NUMWORDS_B                         ; 1                    ; Untyped                     ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                     ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Untyped                     ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; fibonacci.mif        ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                     ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_mct       ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                       ;
++-------------------------------------------+--------------------------------------------+
+; Name                                      ; Value                                      ;
++-------------------------------------------+--------------------------------------------+
+; Number of entity instances                ; 1                                          ;
+; Entity Instance                           ; scomp:cpu1|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                ;
+;     -- WIDTH_A                            ; 16                                         ;
+;     -- NUMWORDS_A                         ; 1                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
+;     -- WIDTH_B                            ; 1                                          ;
+;     -- NUMWORDS_B                         ; 1                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
++-------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "scomp:cpu1"                                                                                             ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                     ; Type   ; Severity ; Details                                                                             ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; program_counter          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; register_A[15..8]        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memory_data_register_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; instruction_register     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out                      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Clock_divider_50Mto1H_10H_100H:comb_10"                                                     ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; clock_out_1H ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 13                          ;
+; cycloneiii_ff         ; 112                         ;
+;     CLR               ; 10                          ;
+;     ENA               ; 40                          ;
+;     SCLR              ; 56                          ;
+;     plain             ; 6                           ;
+; cycloneiii_lcell_comb ; 196                         ;
+;     arith             ; 76                          ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 120                         ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 17                          ;
+;         4 data inputs ; 88                          ;
+; cycloneiii_ram_block  ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Nov 10 15:35:46 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 231109_bemicro_up3_001_io_001 -c bemicro_scomp_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/scomp.v
+    Info (12023): Found entity 1: scomp File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 17
+Info (12021): Found 3 design units, including 3 entities, in source file hdl/debounce_f4s.v
+    Info (12023): Found entity 1: debounce_f4s File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/debounce_f4s.v Line: 5
+    Info (12023): Found entity 2: clock_div File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/debounce_f4s.v Line: 20
+    Info (12023): Found entity 3: my_dff File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/debounce_f4s.v Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/clock_divider_50mto1h_10h_100h.v
+    Info (12023): Found entity 1: Clock_divider_50Mto1H_10H_100H File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/Clock_divider_50Mto1H_10H_100H.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/bemicro_scomp_top.v
+    Info (12023): Found entity 1: bemicro_scomp_top File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at bemicro_scomp_top.v(38): instance has no name File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 38
+Info (12127): Elaborating entity "bemicro_scomp_top" for the top level hierarchy
+Info (12128): Elaborating entity "Clock_divider_50Mto1H_10H_100H" for hierarchy "Clock_divider_50Mto1H_10H_100H:comb_10" File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 38
+Info (12128): Elaborating entity "debounce_f4s" for hierarchy "debounce_f4s:db_user1" File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 41
+Info (12128): Elaborating entity "my_dff" for hierarchy "debounce_f4s:db_user1|my_dff:d0" File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/debounce_f4s.v Line: 9
+Info (12128): Elaborating entity "scomp" for hierarchy "scomp:cpu1" File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 51
+Warning (10230): Verilog HDL assignment warning at scomp.v(85): truncated value with size 32 to match size of target (8) File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 85
+Info (10264): Verilog HDL Case Statement information at scomp.v(72): all case item expressions in this case statement are onehot File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 72
+Warning (10235): Verilog HDL Always Construct warning at scomp.v(170): variable "register_A" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 170
+Info (10264): Verilog HDL Case Statement information at scomp.v(160): all case item expressions in this case statement are onehot File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 160
+Info (12128): Elaborating entity "altsyncram" for hierarchy "scomp:cpu1|altsyncram:altsyncram_component" File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 55
+Info (12130): Elaborated megafunction instantiation "scomp:cpu1|altsyncram:altsyncram_component" File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 55
+Info (12133): Instantiated megafunction "scomp:cpu1|altsyncram:altsyncram_component" with the following parameter: File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 55
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "init_file" = "fibonacci.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mct.tdf
+    Info (12023): Found entity 1: altsyncram_mct File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/db/altsyncram_mct.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_mct" for hierarchy "scomp:cpu1|altsyncram:altsyncram_component|altsyncram_mct:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (12020): Port "address_a" on the entity instantiation of "altsyncram_component" is connected to a signal of width 16. The formal width of the signal in the module is 8.  The extra bits will be ignored. File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/scomp.v Line: 55
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer clk_cpu File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 21
+    Warning (19017): Found clock multiplexer clk_sw1 File: C:/Dati/Progetti/altera/231109_bemicro_up3_001_io_001/hdl/bemicro_scomp_top.v Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 241 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 212 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4768 megabytes
+    Info: Processing ended: Fri Nov 10 15:35:55 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
+
+

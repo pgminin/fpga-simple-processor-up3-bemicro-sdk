@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Nov 10 15:36:00 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : bemicro_scomp_top
+Top-level Entity Name : bemicro_scomp_top
+Family : Cyclone IV E
+Device : EP4CE22F17C7
+Timing Models : Final
+Total logic elements : 196 / 22,320 ( < 1 % )
+    Total combinational functions : 189 / 22,320 ( < 1 % )
+    Dedicated logic registers : 112 / 22,320 ( < 1 % )
+Total registers : 112
+Total pins : 13 / 154 ( 8 % )
+Total virtual pins : 0
+Total memory bits : 4,096 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
